@@ -1,0 +1,36 @@
+{
+	"name": "Book",
+	"columns": [
+		{
+			"name": "Id",
+			"type": "int",
+			"referencedTable": "History",
+			"isPrimary": true
+		}
+		{
+			"name": "Author",
+			"type": "string",
+			"isPrimary": false
+		},
+		{
+			"name": "Name",
+			"type": "string",
+			"isPrimary": false
+		},
+		{
+			"name": "Year",
+			"type": "int",
+			"isPrimary": false
+		},
+		{
+			"name": "Wardrobe",
+			"type": "int",
+			"isPrimary": false
+		},
+		{
+			"name": "Shelf",
+			"type": "int",
+			"isPrimary": false
+		}
+	]
+}

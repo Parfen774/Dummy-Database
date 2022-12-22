@@ -1,0 +1,16 @@
+{
+	"name": "Reader",
+	"columns": [
+		{
+			"name": "Id",
+			"type": "int",
+			"referencedTable": "History",
+			"isPrimary": true
+		},
+		{
+			"name": "FullName",
+			"type": "string",
+			"isPrimary": false
+		}
+	]
+}

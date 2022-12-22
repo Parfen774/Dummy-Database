@@ -1,0 +1,27 @@
+{
+	"name": "History",
+	"column": [
+		{
+			"name": "IdBook",
+			"type": "int",
+			"referencedTable": "Book",
+			"isPrimary": true
+		},
+		{
+			"name": "IdReader",
+			"type": "int",
+			"referencedTable": "Reader",
+			"isPrimary": true
+		},
+		{
+			"name": "TookBook",
+			"type": "DateTime",
+			"isPrimary": false
+		},
+		{
+			"name": "ReturnBook",
+			"type": "DateTime",
+			"isPrimary": false
+		}
+	]
+}
