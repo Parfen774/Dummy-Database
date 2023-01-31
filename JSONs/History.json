@@ -3,13 +3,12 @@
 	"column": [
 		{
 			"name": "IdBook",
-			"type": "int",
-			"referencedTable": "Book",
+			"type": "uint",
 			"isPrimary": true
 		},
 		{
 			"name": "IdReader",
-			"type": "int",
+			"type": "uint",
 			"referencedTable": "Reader",
 			"isPrimary": true
 		},

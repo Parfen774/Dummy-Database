@@ -3,7 +3,7 @@
 	"columns": [
 		{
 			"name": "Id",
-			"type": "int",
+			"type": "uint",
 			"referencedTable": "History",
 			"isPrimary": true
 		}
@@ -19,7 +19,12 @@
 		},
 		{
 			"name": "Year",
-			"type": "int",
+			"type": "DateTime",
+			"isPrimary": false
+		},
+		{
+			"name": "IsUsed",
+			"type": "bool",
 			"isPrimary": false
 		},
 		{

@@ -3,8 +3,7 @@
 	"columns": [
 		{
 			"name": "Id",
-			"type": "int",
-			"referencedTable": "History",
+			"type": "uint",
 			"isPrimary": true
 		},
 		{
