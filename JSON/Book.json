@@ -6,7 +6,7 @@
 			"type": "uint",
 			"referencedTable": "History",
 			"isPrimary": true
-		}
+		},
 		{
 			"name": "Author",
 			"type": "string",
@@ -19,7 +19,7 @@
 		},
 		{
 			"name": "Year",
-			"type": "DateTime",
+			"type": "int",
 			"isPrimary": false
 		},
 		{

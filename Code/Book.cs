@@ -4,18 +4,20 @@ namespace Dummy_Database
 {
     internal class Book
     {
+        public uint Id { get; set; }
         public string Author { get; set; }
         public string Name { get; set; }
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
         public bool IsUsed { get; set; }
         public int Wardrobe { get; set; }
         public int Shelf { get; set; }
 
-        public Book(string author, string name, string year, bool isUsed, int wardrobe, int shelf)
+        public Book(uint id, string author, string name, int year, bool isUsed, int wardrobe, int shelf)
         {
+            Id = id;
             Author = author;
             Name = name;
-            Year = Convert.ToDateTime(year);
+            Year = year;
             IsUsed = isUsed;
             Wardrobe = wardrobe;
             Shelf = shelf;

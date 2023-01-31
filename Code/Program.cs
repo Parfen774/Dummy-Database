@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace Program
+﻿namespace Dummy_Database
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string[][] dataBooks = ReaderCSV.ReadCSV(@"CSV/Books.csv");
+            Scheme schemeBook = new Scheme(@"JSON/Book.json");
         }
     }
 }

@@ -9,12 +9,11 @@ namespace Dummy_Database
         public static DateTime TookBook { get; set; }
         public static DateTime ReturnBook { get; set; }
 
-        public History(uint idBook, uint idReader, string tookBook, string returnBook)
+        public History(uint idBook, uint idReader, string tookBook)
         {
-            IdBook= idBook;
+            IdBook = idBook;
             IdReader= idReader;
             TookBook= Convert.ToDateTime(tookBook);
-            ReturnBook= Convert.ToDateTime(returnBook);
         }
     }
 }
