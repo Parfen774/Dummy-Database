@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Dummy_Database
+﻿namespace Dummy_Database
 {
     internal class Book
     {

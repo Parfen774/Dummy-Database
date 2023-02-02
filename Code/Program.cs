@@ -1,4 +1,6 @@
-﻿namespace Dummy_Database
+﻿using System;
+
+namespace Dummy_Database
 {
     class Program
     {
@@ -6,6 +8,8 @@
         {
             string[][] dataBooks = ReaderCSV.ReadCSV(@"CSV/Books.csv");
             Scheme schemeBook = new Scheme(@"JSON/Book.json");
+
+            Console.WriteLine(ReaderCSV.CheckCorrectData(schemeBook, dataBooks));
         }
     }
 }
