@@ -38,6 +38,10 @@ namespace Dummy_Database
                             if (!bool.TryParse(value, out bool boolean))
                                 throw new Exception($"Incorrect \"{scheme.Columns[column]["name"]}\"! Line: {row + 1}, Column: {column + 1}");
                             break;
+                        case "DateTime":
+                            if (!DateTime.TryParse(value, out DateTime result))
+                                throw new Exception($"Incorrect \"{scheme.Columns[column]["name"]}\"! Line: {row + 1}, Column: {column + 1}");
+                            break;
                     }
                 }
             return true;

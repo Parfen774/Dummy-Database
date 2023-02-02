@@ -1,6 +1,6 @@
 {
 	"name": "History",
-	"column": [
+	"columns": [
 		{
 			"name": "IdBook",
 			"type": "uint",

@@ -1,6 +1,8 @@
-﻿namespace Dummy_Database
+﻿using System;
+
+namespace Dummy_Database
 {
-    internal class Book
+    class Book
     {
         public uint Id { get; set; }
         public string Author { get; set; }
@@ -19,6 +21,42 @@
             IsUsed = isUsed;
             Wardrobe = wardrobe;
             Shelf = shelf;
+        }
+
+        public static Book[] CreateBooks(string[][] dataBooks)
+        {
+            dataBooks = dataBooks[1..];
+            Book[] result = new Book[dataBooks.Length];
+
+            for (int i = 0; i < result.Length; i++)
+                result[i] = new Book(
+                    uint.Parse(dataBooks[i][0]),
+                    dataBooks[i][1],
+                    dataBooks[i][2],
+                    int.Parse(dataBooks[i][3]),
+                    bool.Parse(dataBooks[i][4]),
+                    int.Parse(dataBooks[i][5]),
+                    int.Parse(dataBooks[i][6]));
+
+            return result;
+        }
+
+        public static void Print(History[] arrayHistory, Person[] arrayPersons, Book[] arrayBooks)
+        {
+            uint idReader = 0;
+            string nameReader = "Null";
+            string date = "Null";
+
+            foreach (Book book in arrayBooks)
+            {
+                if (book.IsUsed)
+                {
+                    idReader = Person.FindReaderIdByBookID(arrayPersons, arrayHistory, book.Id);
+                    nameReader = Person.FindFullNameByReaderID(arrayPersons, idReader);
+                    date = Person.FindDateByReaderID(arrayHistory, idReader);
+                }
+                Console.WriteLine($"{book.Author}, {book.Name}, {nameReader}, {date}");
+            }
         }
     }
 }
