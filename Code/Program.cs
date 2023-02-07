@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            // Так много кода для хорошо понимания работы классов...
+
             string[][] dataBooks = ReaderCSV.ReadCSV(@"CSV/Books.csv");
             Scheme schemeBook = new Scheme(@"JSON/Book.json");
             bool correctBooks = ReaderCSV.CheckCorrectData(schemeBook, dataBooks);
