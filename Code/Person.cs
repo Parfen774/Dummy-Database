@@ -26,28 +26,12 @@ namespace Dummy_Database
             return result;
         }
 
-        public static uint FindReaderIdByBookID(Person[] arrayPersons, History[] arrayHistory, uint bookID)
-        {
-            foreach (History history in arrayHistory)
-                if (history.IdBook == bookID)
-                    return history.IdReader;
-            throw new Exception($"ID: {bookID} - \"Dont have book!\"");
-        }
-
-        public static string FindFullNameByReaderID(Person[] arrayPersons, uint readerID)
+        public static string GetFullNameReader(Person[] arrayPersons, uint readerId)
         {
             foreach (Person person in arrayPersons)
-                if (person.Id == readerID)
+                if (person.Id == readerId)
                     return person.FullName;
-            throw new Exception($"ID: {readerID} - \"Dont have book!\"");
-        }
-
-        public static string FindDateByReaderID(History[] arrayHistory, uint readerID)
-        {
-            foreach (History history in arrayHistory)
-                if (history.IdReader == readerID)
-                    return history.TookBook.ToShortDateString();
-            throw new Exception($"ID: {readerID} - \"Dont have book!\"");
+            throw new Exception($"Reader id: {readerId} - \"Reader not found!\"");
         }
     }
 }

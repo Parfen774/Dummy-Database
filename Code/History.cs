@@ -29,5 +29,21 @@ namespace Dummy_Database
 
             return result;
         }
+
+        public static uint GetUserID(History[] arrayHistory, uint bookId)
+        {
+            foreach (History history in arrayHistory)
+                if (history.IdBook == bookId)
+                    return history.IdReader;
+            throw new Exception($"Book id: {bookId} - \"There is not history with this book!\"");
+        }
+
+        public static string GetDateTookBook(History[] arrayHistory, uint readerId)
+        {
+            foreach (History history in arrayHistory)
+                if (history.IdReader == readerId)
+                    return history.TookBook.ToShortDateString();
+            throw new Exception($"Reader id: {readerId} - \"Date not found!\"");
+        }
     }
 }

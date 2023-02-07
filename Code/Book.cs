@@ -43,19 +43,19 @@ namespace Dummy_Database
 
         public static void Print(History[] arrayHistory, Person[] arrayPersons, Book[] arrayBooks)
         {
-            uint idReader = 0;
-            string nameReader = "Null";
-            string date = "Null";
+            uint readerId = 0;
+            string readerFullName = "";
+            string date = "";
 
             foreach (Book book in arrayBooks)
             {
                 if (book.IsUsed)
                 {
-                    idReader = Person.FindReaderIdByBookID(arrayPersons, arrayHistory, book.Id);
-                    nameReader = Person.FindFullNameByReaderID(arrayPersons, idReader);
-                    date = Person.FindDateByReaderID(arrayHistory, idReader);
+                    readerId = History.GetUserID(arrayHistory, book.Id);
+                    readerFullName = Person.GetFullNameReader(arrayPersons, readerId);
+                    date = History.GetDateTookBook(arrayHistory, readerId);
                 }
-                Console.WriteLine($"{book.Author}, {book.Name}, {nameReader}, {date}");
+                Console.WriteLine($"{book.Author}, {book.Name}, {readerFullName}, {date}");
             }
         }
     }
