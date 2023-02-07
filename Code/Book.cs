@@ -43,20 +43,41 @@ namespace Dummy_Database
 
         public static void Print(History[] arrayHistory, Person[] arrayPersons, Book[] arrayBooks)
         {
-            uint readerId = 0;
-            string readerFullName = "";
-            string date = "";
+
+            int[] lengthColumns = GetMaxLegthColumns(arrayBooks, arrayPersons, arrayHistory);
+
+            Console.WriteLine($"|{"Автор".PadRight(lengthColumns[0])}|{"Название".PadRight(lengthColumns[1])}|{"Читатель".PadRight(lengthColumns[2])}|{"Взял".PadRight(lengthColumns[3])}|");
+            Console.WriteLine($"|{new string('-', lengthColumns[0])}|{new string('-', lengthColumns[1])}|{new string('-', lengthColumns[2])}|{new string('-', lengthColumns[3])}|");
 
             foreach (Book book in arrayBooks)
             {
+                string readerFullName = "";
+                string date = "";
+
                 if (book.IsUsed)
                 {
-                    readerId = History.GetUserID(arrayHistory, book.Id);
+                    uint readerId = History.GetUserID(arrayHistory, book.Id);
                     readerFullName = Person.GetFullNameReader(arrayPersons, readerId);
                     date = History.GetDateTookBook(arrayHistory, readerId);
                 }
-                Console.WriteLine($"{book.Author}, {book.Name}, {readerFullName}, {date}");
+                Console.WriteLine($"|{book.Author.PadRight(lengthColumns[0])}|{book.Name.PadRight(lengthColumns[1])}|{readerFullName.PadRight(lengthColumns[2])}|{date.PadRight(lengthColumns[3])}|");
             }
+        }
+
+        private static int[] GetMaxLegthColumns(Book[] arrayBooks, Person[] arrayPersons, History[] arrayHistory)
+        {
+            int[] result = new int[] { 10, 10, 10, 10 };
+
+            foreach (Book book in arrayBooks)
+            {
+                result[0] = Math.Max(result[0], book.Author.Length);
+                result[1] = Math.Max(result[1], book.Name.Length);
+            }
+
+            foreach (Person person in arrayPersons)
+                result[2] = Math.Max(result[2], person.FullName.Length);
+
+            return result;
         }
     }
 }
