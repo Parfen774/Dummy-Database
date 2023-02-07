@@ -43,15 +43,14 @@ namespace Dummy_Database
 
         public static void Print(History[] arrayHistory, Person[] arrayPersons, Book[] arrayBooks)
         {
-            uint readerId = 0;
-            string readerFullName = "";
-            string date = "";
-
             foreach (Book book in arrayBooks)
             {
+                string readerFullName = "";
+                string date = "";
+
                 if (book.IsUsed)
                 {
-                    readerId = History.GetUserID(arrayHistory, book.Id);
+                    uint readerId = History.GetUserID(arrayHistory, book.Id);
                     readerFullName = Person.GetFullNameReader(arrayPersons, readerId);
                     date = History.GetDateTookBook(arrayHistory, readerId);
                 }
