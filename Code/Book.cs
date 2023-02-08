@@ -44,7 +44,7 @@ namespace Dummy_Database
         public static void Print(History[] arrayHistory, Person[] arrayPersons, Book[] arrayBooks)
         {
 
-            int[] lengthColumns = GetMaxLegthColumns(arrayBooks, arrayPersons, arrayHistory);
+            int[] lengthColumns = GetMaxLegthColumns(arrayBooks, arrayPersons);
 
             Console.WriteLine($"|{"Автор".PadRight(lengthColumns[0])}|{"Название".PadRight(lengthColumns[1])}|{"Читатель".PadRight(lengthColumns[2])}|{"Взял".PadRight(lengthColumns[3])}|");
             Console.WriteLine($"|{new string('-', lengthColumns[0])}|{new string('-', lengthColumns[1])}|{new string('-', lengthColumns[2])}|{new string('-', lengthColumns[3])}|");
@@ -64,7 +64,7 @@ namespace Dummy_Database
             }
         }
 
-        private static int[] GetMaxLegthColumns(Book[] arrayBooks, Person[] arrayPersons, History[] arrayHistory)
+        private static int[] GetMaxLegthColumns(Book[] arrayBooks, Person[] arrayPersons)
         {
             int[] result = new int[] { 10, 10, 10, 10 };
 

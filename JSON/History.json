@@ -4,6 +4,7 @@
 		{
 			"name": "IdBook",
 			"type": "uint",
+			"referencedTable": "Book",
 			"isPrimary": true
 		},
 		{

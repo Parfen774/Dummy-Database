@@ -4,7 +4,6 @@
 		{
 			"name": "Id",
 			"type": "uint",
-			"referencedTable": "History",
 			"isPrimary": true
 		},
 		{
